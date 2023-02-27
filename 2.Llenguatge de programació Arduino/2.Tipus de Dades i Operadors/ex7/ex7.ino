@@ -8,13 +8,14 @@
 //********** Includes *************************************************************
 
 //********** Variables ************************************************************
-int drive_gb = 5;
-int drive_mb = 0;
+int drive_gb = 100;
+long drive_mb;     // we changed the type from "int" to "long"
 
 //********** Setup ****************************************************************
 void setup()             // run once, when the sketch starts
 {
-  Serial.begin(9600);     // set up Serial library at 9600 bps
+  Serial.begin(9600);    // set up Serial library at 9600 bps
+
   Serial.print("Your HD is ");
   Serial.print(drive_gb);
   Serial.println(" GB large.");
