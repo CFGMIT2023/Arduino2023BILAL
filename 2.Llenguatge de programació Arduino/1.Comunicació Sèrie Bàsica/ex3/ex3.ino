@@ -18,7 +18,7 @@ void setup()
 //********** Loop *****************************************************************
 void loop()                     
 {
-  Serial.print("Hello world!");  // prints Hello world!
+  Serial.println("Hello world!");  // prints Hello world!
   delay(1000);
 }
 
