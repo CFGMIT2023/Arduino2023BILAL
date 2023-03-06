@@ -1,36 +1,35 @@
 /**********************************************************************************
 **                                                                               **
-**                          Control Structures                                   **
+**                     TÍTOL: hellow world                                       **
 **                                                                               **
+**   NOM :BILAL NAMIR                            DATA :01/03/23                  **
 **                                                                               **
 **********************************************************************************/
 
-//********** Includes *************************************************************
+//****************************** INCLUDES *****************************************
 
-//********** Variables ************************************************************
-int comptar = 5;
+//****************************** VARIABLES ****************************************float qualEnergy = 3;
+int comptar = 11;
+int i = 0;
 
 //********** Setup ****************************************************************
-void setup()      // run once, when the sketch starts
+void setup()               // run once, when the sketch starts
 {
-  Serial.begin(9600);     // set up Serial library at 9600 bps
-
-  for (int i=0; i < comptar; i++)
+  Serial.begin(9600);    
+ 
+  Serial.print("Ara comptare de 0 a ");
+  Serial.println(comptar);  
+ 
+  while(i <= comptar)
   {
     Serial.print(i);
-   if ( i < (comptar-1))
-    {
-    
-      Serial.print("-");
-     
-          
-    }
-   
+    Serial.print("-");
+    i++;
   } 
 }
 
 //********** Loop *****************************************************************
-void loop()   // we need this to be here even though its empty
+void loop()  
 {
 }
 

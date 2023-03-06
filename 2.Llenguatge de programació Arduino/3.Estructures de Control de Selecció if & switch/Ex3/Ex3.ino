@@ -1,31 +1,24 @@
 /**********************************************************************************
 **                                                                               **
-**                          Control Structures                                   **
+**                     TÍTOL: hellow world                                       **
 **                                                                               **
+**   NOM :BILAL NAMIR                            DATA :01/03/23                  **
 **                                                                               **
 **********************************************************************************/
 
-//********** Includes *************************************************************
+//****************************** INCLUDES *****************************************
 
-//********** Variables ************************************************************
-int comptar = 5;
+//****************************** VARIABLES ****************************************
+int tempAigua = 101;
 
 //********** Setup ****************************************************************
-void setup()      // run once, when the sketch starts
+void setup()              // run once, when the sketch starts
 {
   Serial.begin(9600);     // set up Serial library at 9600 bps
 
-  for (int i=0; i < comptar; i++)
+  if (tempAigua > 100)
   {
-    Serial.print(i);
-   if ( i < (comptar-1))
-    {
-    
-      Serial.print("-");
-     
-          
-    }
-   
+    Serial.print("Aigua supera els 100C, esta bullint!");
   } 
 }
 

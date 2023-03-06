@@ -1,31 +1,34 @@
 /**********************************************************************************
 **                                                                               **
-**                          Control Structures                                   **
+**                     TÍTOL: hellow world                                       **
 **                                                                               **
+**   NOM :BILAL NAMIR                            DATA :01/03/23                  **
 **                                                                               **
 **********************************************************************************/
 
-//********** Includes *************************************************************
+//****************************** INCLUDES *****************************************
 
-//********** Variables ************************************************************
-int comptar = 5;
-
+//****************************** VARIABLES ****************************************float qualEnergy = 3;
+int taula = 2;
 //********** Setup ****************************************************************
 void setup()      // run once, when the sketch starts
 {
   Serial.begin(9600);     // set up Serial library at 9600 bps
 
-  for (int i=0; i < comptar; i++)
+  for (int taula=2; taula <= 10; taula++)
   {
-    Serial.print(i);
-   if ( i < (comptar-1))
+    Serial.print("Taula de multipilcar del ");
+    Serial.println(taula);
+    for (int i=0; i <= 10; i++)
     {
-    
-      Serial.print("-");
-     
-          
+      delay(100);
+      Serial.print(taula);
+      Serial.print(" x ");
+      Serial.print(i);
+      Serial.print( " = ");
+      Serial.println(taula*i);    
     }
-   
+    Serial.println();
   } 
 }
 
