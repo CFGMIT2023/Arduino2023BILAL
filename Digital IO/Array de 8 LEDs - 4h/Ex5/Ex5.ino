@@ -7,8 +7,10 @@ const byte led4 = 9;          // donar nom al pin 9 de l’Arduino
 const byte led5 = 10;         // donar nom al pin 10 de l’Arduino
 const byte led6 = 11;         // donar nom al pin 11 de l’Arduino
 const byte led7 = 12;         // donar nom al pin 12 de l’Arduino
-const byte buttonPin = 2;     // donar nom al pin 2 de l’Arduino
-byte buttonState = 0;  
+const byte buttonPin2 = 2;     // donar nom al pin 2 de l’Arduino
+const byte buttonPin3 = 3;
+byte buttonState2 = 0;         // per guardar l’estat en que és troba el button2
+byte buttonState3 = 0;         // per guardar l’estat en que és troba el button3
 const byte led[] = {5, 6, 7, 8, 9, 10, 11, 12};
 //********** Setup ****************************************************************
 
@@ -23,13 +25,16 @@ void setup()
   pinMode(led5, OUTPUT);     // definir el pin 10 com una sortida
   pinMode(led6, OUTPUT);     // definir el pin 11 com una sortida
   pinMode(led7, OUTPUT);     // definir el pin 12 com una sortida
-  pinMode(buttonPin, INPUT); // definir el pin 2 com una entrada  
+  pinMode(buttonPin2, INPUT); // definir el pin 2 com una entrada
+  pinMode(buttonPin3, INPUT); // definir el pin 3 com una entrada 
+  
 }
 //********** Loop *****************************************************************
 void loop()
 {
-  buttonState = digitalRead(buttonPin);     
-  if (buttonState == 0)   //polsador premut, muntat amb Pull-up
+  buttonState2 = digitalRead(buttonPin2);     
+  buttonState3 = digitalRead(buttonPin3); 
+  if (buttonState2 == 0)   //polsador premut, muntat amb Pull-up
   {
     
       digitalWrite(led0, HIGH);     // posar a 0V el pin 5
@@ -55,7 +60,7 @@ void loop()
    delay(500);  
  
   }
-  else  //polsador no premut, muntat amb Pull-up
+  else if (buttonState3 == 0)  //polsador no premut, muntat amb Pull-up
   {
    
      digitalWrite(led0, HIGH);    // posar a 5V el pin 5
@@ -81,5 +86,11 @@ void loop()
   delay(500);                  // es queden leds 500ms apagats
  
   }
+  else 
+  {
+
+
+  }
+
 }
 //********** Funcions *************************************************************
