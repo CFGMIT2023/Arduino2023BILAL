@@ -8,9 +8,12 @@ const byte led5 = 10;         // donar nom al pin 10 de l’Arduino
 const byte led6 = 11;         // donar nom al pin 11 de l’Arduino
 const byte led7 = 12;         // donar nom al pin 12 de l’Arduino
 const byte buttonPin = 2;     // donar nom al pin 2 de l’Arduino
-byte buttonState = 0;         // per guardar l’estat en que és troba el button
+byte buttonState = 0;  
+const byte led[] = {5, 6, 7, 8, 9, 10, 11, 12};
 //********** Setup ****************************************************************
+
 void setup()
+
 {
   pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
   pinMode(led1, OUTPUT);     // definir el pin 6 com una sortida
@@ -25,28 +28,20 @@ void setup()
 //********** Loop *****************************************************************
 void loop()
 {
-	    buttonState = digitalRead(buttonPin);     
+  buttonState = digitalRead(buttonPin);     
   if (buttonState == 0)   //polsador premut, muntat amb Pull-up
   {
-    const byte led[] = {5, 6, 7, 8, 9, 10, 11, 12};
-    for (i = 0; i < 8; i++)
+    for (int i = 0; i < 8; i++)
     {
       digitalWrite(led[i], HIGH);
     }
-     
-          }
-          else  //polsador no premut, muntat amb Pull-up
-          {
-
-          }
- }
-//********** Funcions *************************************************************
-
-     digitalWrite(, HIGH);
-          }
-          else  //polsador no premut, muntat amb Pull-up
-          {
-
-          }
- }
+  }
+  else  //polsador no premut, muntat amb Pull-up
+  {
+    for (int i = 0; i < 8; i++)
+    {
+      digitalWrite(led[i], LOW);
+    }
+  }
+}
 //********** Funcions *************************************************************
